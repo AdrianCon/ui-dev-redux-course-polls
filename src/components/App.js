@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { handleInitialData } from "../redux/actions/shared";
 import Leaderboard from "./Leaderboard";
 import Dashboard from "./Dashboard";
+import AddPoll from "./AddPoll";
 
 export default function App() {
   const store = useSelector((state) => state);
@@ -17,7 +18,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className="container">{loading === true ? null : <Dashboard />}</div>
+      <div className="container">{loading === true ? null : <AddPoll />}</div>
     </Router>
   );
 }
