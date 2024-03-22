@@ -2,7 +2,7 @@ import { savePollAnswer } from "../../utils/api";
 import { showLoading, hideLoading } from "react-redux-loading";
 
 export const ADD_ANSWER = "ADD_ANSWER";
-export function addAnswer(authedUser, id, answer) {
+export function addAnswer({ authedUser, id, answer }) {
   return {
     type: ADD_ANSWER,
     authedUser,
@@ -16,6 +16,6 @@ export function handleAddAnswer(answerData) {
     dispatch(showLoading);
     savePollAnswer(answerData)
       .then(() => dispatch(addAnswer(answerData)))
-      .then(() => dispatch(hideLoading));
+      .then(() => dispatch(hideLoading()));
   };
 }

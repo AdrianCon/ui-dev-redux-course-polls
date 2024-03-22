@@ -1,10 +1,10 @@
 import * as React from "react";
 import { handleAddPoll } from "../redux/actions/polls";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 export default function AddPoll() {
-  const navigate = useNavigate();
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [options, setOptions] = React.useState({
@@ -19,7 +19,7 @@ export default function AddPoll() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(handleAddPoll({ question, ...options }));
-    navigate("/");
+    history.push("/");
   };
 
   const handleInputChange = ({ target }) => {
