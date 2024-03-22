@@ -1,4 +1,5 @@
 import { RECEIVE_USERS } from "../actions/users";
+import { ADD_POLL } from "../actions/polls";
 
 export default function users(state = {}, action) {
   switch (action.type) {
